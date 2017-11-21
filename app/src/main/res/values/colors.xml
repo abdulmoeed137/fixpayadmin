@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#a98228</color>
+    <color name="mainColor">#2c60a4</color>
+    <color name="mainColoright">#EE518BD7</color>
+    <color name="mainColorightmore">#21af882d</color>
+    <color name="semiwhite">#09af882d</color>
+    <color name="colorPrimaryDark">#a98228</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="theme_primary_accent">#1b1d19</color>
+    <color name="theme_primary_dark">#a98228</color>
+    <color name="theme_primary_light">#FF2c60a4</color>
+    <color name="theme_window_background">#653636</color>
+    <color name="background">#efefef</color>
+    <color name="theme_divider">#efefef</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="textcolor">#dbb8b6b6</color>
+    <color name="QRCodeBlackColor">#000000</color>
+    <color name="QRCodeWhiteColor">#ffffff</color>
+</resources>
