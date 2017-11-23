@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -31,6 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
     RadioButton byID, byQR;
     EditText user_id, amount;
     ProgressBar progressBar;
+    Button orderSite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,23 @@ public class DashboardActivity extends AppCompatActivity {
         setUpComponents();
     }
 
-    private void setUpComponents() {
+    private void setUpComponents()
+    {
+
+        orderSite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+
+            {
+
+                startActivity(new Intent(DashboardActivity.this,OrderActivity.class));
+
+
+
+            }
+        });
+
+
         merchant_name.setText(new SessionManager(DashboardActivity.this).getName());
 
         byID.setOnClickListener(new View.OnClickListener() {
@@ -192,6 +210,9 @@ public class DashboardActivity extends AppCompatActivity {
         amount = (EditText)this.findViewById(R.id.amount);
 
         progressBar = (ProgressBar)this.findViewById(R.id.progressBar);
+
+        orderSite = (Button) this.findViewById(R.id.order_site);
+
     }
 
     @Override

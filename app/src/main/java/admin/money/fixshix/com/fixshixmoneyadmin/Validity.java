@@ -108,6 +108,24 @@ public class Validity {
         }
         else return true;
     }
+
+    static public boolean isDescTrue(String name,Context context)
+    {
+
+        if (name.isEmpty()) {
+
+            setStatus("Desc Is Empty!",context);
+            return false;
+        }
+        if (name.length()<=4)
+        {
+            setStatus("Desc too short!",context);
+            return false;
+        }
+        else return true;
+    }
+
+
     static public boolean isOption1True(String o1,Context context)
     {
 

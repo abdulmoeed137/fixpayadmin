@@ -125,7 +125,7 @@ android:maxLength="6"
             android:background="@color/mainColor"
             android:text="Proceed"
             android:textColor="@color/background"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -136,7 +136,7 @@ android:maxLength="6"
             android:layout_marginTop="4dp"
             android:text="Transaction Logs"
             android:textColor="@color/mainColor"
-            android:textSize="20dp" />
+            android:textSize="18dp" />
         <Button
             android:id="@+id/logs"
             android:layout_width="match_parent"
@@ -145,7 +145,18 @@ android:maxLength="6"
             android:background="@color/theme_window_background"
             android:text="View 30 days logs"
             android:textColor="@color/background"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/order_site"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@color/theme_window_background"
+            android:text="View Order Site"
+            android:textColor="@color/background"
+            android:textSize="16dp" />
+
 
     </LinearLayout>
 
@@ -154,7 +165,7 @@ android:maxLength="6"
     <LinearLayout
 
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="40dp"
         android:background="@color/mainColor"
         android:layout_alignParentBottom="true"></LinearLayout>
 

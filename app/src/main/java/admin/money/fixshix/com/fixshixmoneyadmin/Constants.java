@@ -5,12 +5,12 @@ package admin.money.fixshix.com.fixshixmoneyadmin;
  */
 
 public class Constants {
-    public  static  String MAINURL = "http://fixpay.pk/fixshix_money_api/merchant_api/";
+    public  static  String MAINURL = "http://fixshix.com/fixshix_money_api/merchant_api/";
     public  static  String login = MAINURL+"login.php";
     public  static  String make_transaction_qr= MAINURL+"make_transaction_qr.php";
     public  static  String make_transaction = MAINURL+"make_transaction.php";
     public  static  String merchant_history = MAINURL+"merchant_history.php";
-
+    public  static  String add_menu = MAINURL+"add_menu.php";
 
 
     public  static  String SESSION="FixshixMoneyAdminFinal";
