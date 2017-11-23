@@ -2,7 +2,9 @@ package admin.money.fixshix.com.fixshixmoneyadmin;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -33,9 +36,10 @@ public class AddMenuActivity extends AppCompatActivity
     Button Submit;
     ImageButton Image;
     Context context;
-    private Bitmap bitmap;
-    private int PICK_IMAGE_REQUEST = 1;
-    Uri filePath = null;
+
+
+    String imgDecodableString;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +94,7 @@ public class AddMenuActivity extends AppCompatActivity
 
                final HashMap<String, String> hashMap = new HashMap<String, String>();
 
-              String image = getStringImage(bitmap);
+              String image = getStringImage(null);
 
                hashMap.put("merchantid", new SessionManager(AddMenuActivity.this).getId());
                hashMap.put("menuname", _mname);
@@ -177,10 +181,11 @@ public class AddMenuActivity extends AppCompatActivity
 
     //method to show file chooser
     private void showFileChooser() {
-        Intent intent = new Intent();
-        intent.setType("image*//*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+        // Create intent to Open Image applications like Gallery, Google Photos
+        Intent galleryIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+// Start the Intent
+        startActivityForResult(galleryIntent, 102);
     }
 
 
@@ -189,16 +194,37 @@ public class AddMenuActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            filePath = data.getData();
-            try {
-                //Getting the Bitmap from Gallery
-                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                //Setting the Bitmap to ImageView
-                Image.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
+
+        try {
+            // When an Image is picked
+            if (requestCode == 102 && resultCode == RESULT_OK
+                    && null != data) {
+                // Get the Image from data
+
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+
+                // Get the cursor
+                Cursor cursor = getContentResolver().query(selectedImage,
+                        filePathColumn, null, null, null);
+                // Move to first row
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                imgDecodableString = cursor.getString(columnIndex);
+                cursor.close();
+                ImageView imgView = (ImageView) findViewById(R.id.menu_image);
+                // Set the Image in ImageView after decoding the String
+                imgView.setImageBitmap(BitmapFactory
+                        .decodeFile(imgDecodableString));
+
+            } else {
+                Toast.makeText(this, "You haven't picked Image",
+                        Toast.LENGTH_LONG).show();
             }
+        } catch (Exception e) {
+            Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
+                    .show();
         }
     }
 
