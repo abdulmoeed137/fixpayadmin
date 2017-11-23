@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"/>
+
+
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+     >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+
+            <TextView
+                android:gravity="center"
+
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="Add Menu"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/add_menu"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+
+                />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Menu Name"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/menu_name" />
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Menu Desc"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/menu_desc" />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Menu Price"
+                android:layout_marginRight="40dp"
+                android:inputType="number"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/menu_price" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cash Back"
+                android:inputType="number"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cash_back" />
+
+
+            <ImageButton
+                android:id="@+id/menu_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/image_here" />
+
+
+
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Submit"
+                android:id="@+id/submitButton"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:background="@color/mainColor"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center_horizontal"
+                />
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:padding="4dp"
+                android:layout_marginTop="4dp"
+                android:text="Order Site"
+                android:textColor="@color/theme_window_background"
+                android:textSize="18dp" />
+
+
+            <Button
+                android:id="@+id/add_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/mainColor"
+                android:text="Add Menu"
+                android:textColor="@color/background"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/our_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/mainColor"
+                android:text="Our Menu"
+                android:textColor="@color/background"
+                android:textSize="16dp" />
+
+            <Button
+                android:id="@+id/order_site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/mainColor"
+                android:text="View Order Site"
+                android:textColor="@color/background"
+                android:textSize="16dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>-->
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/mainColor"
+        android:layout_alignParentBottom="true"></LinearLayout>
+
+
+
+</RelativeLayout>
